@@ -5,4 +5,4 @@
 //  Created by elzhankk on 05.06.2024.
 //
 
-import Foundation
+typealias ButtonAction = () -> Void

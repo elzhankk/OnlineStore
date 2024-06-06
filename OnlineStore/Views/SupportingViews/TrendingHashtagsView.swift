@@ -9,10 +9,21 @@ import SwiftUI
 
 struct TrendingHashtagsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("@Trending")
+                .font(tenorSans(18))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.black)
+            
+            HashtagsView(tags: hashtags)
+                .padding([.leading, .trailing], 30)
+        }
+        
     }
 }
 
-#Preview {
-    TrendingHashtagsView()
+struct TrendingHashtagsView_Previews: PreviewProvider {
+    static var previews: some View {
+        TrendingHashtagsView()
+    }
 }

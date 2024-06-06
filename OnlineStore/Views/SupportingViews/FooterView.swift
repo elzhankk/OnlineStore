@@ -9,10 +9,20 @@ import SwiftUI
 
 struct FooterView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("Openfashion")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Image("Footer")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
     }
 }
 
-#Preview {
-    FooterView()
+struct FooterView_Previews: PreviewProvider {
+    static var previews: some View {
+        FooterView()
+    }
 }

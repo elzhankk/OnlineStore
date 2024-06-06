@@ -8,11 +8,48 @@
 import SwiftUI
 
 struct ProductItemView: View {
+    var product: Product
+    @EnvironmentObject var cartManager: CartManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationLink {
+            ProductDetailsView(product: product)
+            
+        } label: {
+            VStack {
+         
+                    
+                Image(product.images[0])
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 165, height: 200)
+                    .cornerRadius(5)
+                    .shadow(radius: 1)
+                
+                Text(product.title)
+                    .font(Font.custom("Tenor Sans", size: 12))
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color.BodyGrey)
+                    .frame(width: 165, alignment: .leading)
+                
+                Text("\(product.price) ₸")
+                    .font(Font.custom("Tenor Sans", size: 16))
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(Color.Default)
+                    .frame(width: 165, alignment: .leading)
+                    .padding(.top, 2)
+                
+                
+                }
+            }
+            
+        }
     }
-}
+    
+    struct ProductItemView_Previews: PreviewProvider {
+        static var previews: some View {
+            ProductItemView(product: product1)
+        }
+    }
 
-#Preview {
-    ProductItemView()
-}

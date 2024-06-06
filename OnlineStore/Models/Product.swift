@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+struct Product {
+    var title: String
+    
+    var price: Int
+    var description: String
+    var images: [String]
+    var category: Categories
+    var gender: GenderCategory
+    
+}
+
+

@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
-struct CartManager: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+// Cart Manager
+class CartManager: ObservableObject {
+    @Published var products: [Product] = []
+    
+    func addToCart(product: Product) {
+        products.append(product)
     }
-}
-
-#Preview {
-    CartManager()
 }
